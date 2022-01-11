@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+table.dataTable thead .sorting:after {
+  opacity: .2;
+  content: ""!important;
+}
+table.dataTable thead .sorting_asc:after {
+  opacity: .5;
+  content: ""!important;
+}
+th.dt-center, td.dt-center { text-align: center; }
+
+
+.dataTables_filter {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.dataTables_length {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

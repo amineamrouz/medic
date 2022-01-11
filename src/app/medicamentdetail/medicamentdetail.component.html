@@ -1,0 +1,47 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <div class="container m-1 p-1">
+    <button class=" btn btn btn-outline-secondary" *ngIf="isAdd === false" (click)="onAdd()" ><span class="btn-label"><i class="bi bi-plus-lg" ></i></span> Ajouter</button>
+    <button class="btn btn btn-outline-warning" *ngIf="isAdd === true" (click)="onAdd()" ><span class="btn-label"><i class="bi bi-x-lg" ></i></span> Annuler</button>
+
+  </div>
+  </nav>
+<div class="container">
+  <form [formGroup]="fg_addmeddetail" (ngSubmit)="onAddMedDetail()">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table hover" >
+  <thead class="table-dark">
+    <tr>
+
+      <th>N°lot</th>
+      <th>date peremption</th>
+      <th>date entree</th>
+      <th>Supprimer</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngIf="isAdd === true">
+
+
+      <td><input type="number"class="form-control" id="nlot" formControlName="nlot"></td>
+      <td><input type="date" class="form-control" id="date_peremption" formControlName="date_peremption"></td>
+      <td><input type="date" class="form-control" id="date_entree" formControlName="date_entree"></td>
+      <td> <button type="submit" class="btn btn btn-outline-secondary"  ><span class="btn-label"><i class="bi bi-plus" ></i></span> Ajouter</button> </td>
+
+  </tr>
+  <ng-template [ngIf]="meddetails?.length != 0" >
+    <tr *ngFor="let med of meddetails" [ngStyle]="{'background-color': getcolor(med.date_peremption)}">
+
+      <td>{{ med.nlot }}</td>
+      <td>{{ med.date_peremption | date :"MM/dd/yyyy" }}</td>
+      <td>{{ med.date_entree | date :"MM/dd/yyyy" }}</td>
+      <td> <button type="button" class="btn btn-sm btn-outline-warning" (click)="getDifferenceInDays(med.date_peremption)" > <span  aria-hidden="true"><i class="bi bi-trash-fill"></i></span></button> </td>
+    </tr>
+  </ng-template>
+  </tbody>
+  <tbody *ngIf="meddetails?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>

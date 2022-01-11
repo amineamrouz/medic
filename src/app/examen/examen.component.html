@@ -1,0 +1,273 @@
+<div class="container p-4">
+  <form [formGroup]="fg_examen" (ngSubmit)="onAddEmp()">
+    <div class="row p-2">
+      <h2>Type de visite: Embauche</h2>
+      <div class="container col ">
+        <h3>Appareil Moteur</h3>
+        <div class="form-group ">
+          <label for="desc3">Description</label>
+          <input type="text" class="form-control form-control-sm" id="desc3" formControlName="desc3">
+        </div>
+        <div class="row">
+        <div class="form-group col-3">
+          <label for="poids">Poids </label>
+          <input type="number" class="form-control form-control-sm" id="poids" formControlName="poids">
+        </div>
+        <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+          /KG
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-3">
+          <label for="taille">Taille </label>
+          <input type="number" class="form-control form-control-sm" id="taille" formControlName="taille">
+        </div>
+        <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+          /CM
+        </div>
+      </div>
+
+      </div>
+      <div class="container col">
+        <h3>Appareil Occulaire</h3>
+        <div class="col-4 my-1">
+          <label class="mr-sm-2" for="correction">Avec correction</label>
+          <select class="form-select form-select-sm mb-3" id="correction" formControlName="correction">
+            <option selected>Choose...</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+
+
+          <div class="row">
+            <div class="form-group col-3">
+              <label for="og">Vision OG </label>
+              <input type="number" class="form-control form-control-sm" id="og" formControlName="og">
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+              /10
+            </div>
+            <div class="form-group col-3">
+              <label for="od">Vision OD </label>
+              <input type="number" class="form-control form-control-sm" id="od" formControlName="od">
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+              /10
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="couleur">Couleur</label>
+            <input type="text" class="form-control form-control-sm" id="couleur" formControlName="couleur">
+          </div>
+      </div>
+    </div>
+    <div class="row p-2">
+      <h3>Appareil Auditif</h3>
+      <div class="col-4 my-1">
+        <label class="mr-sm-2" for="prothese">Avec prothese</label>
+        <select class="form-select form-select-sm mb-3" id="prothese" formControlName="prothese">
+          <option selected>Choose...</option>
+          <option value="Oui">Oui</option>
+          <option value="Non">Non</option>
+        </select>
+      </div>
+
+        <!-- <div class="form-group ">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="prothese">
+            <div>
+            <label class="form-check-label" for="prothese">
+              Avec Prothèse
+            </label>
+          </div>
+          </div>
+          </div> -->
+
+          <div class="row">
+            <div class="form-group col-3">
+              <label for="ag">Audition G </label>
+              <input type="number" class="form-control form-control-sm" id="ag" formControlName="ag">
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+              /10
+            </div>
+            <div class="form-group col-3">
+              <label for="ad">Audition D </label>
+              <input type="number" class="form-control form-control-sm" id="ad" formControlName="ad">
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+              /10
+            </div>
+          </div>
+
+
+
+
+    </div>
+    <!-- mmmmmmm -->
+    <div class="row p-2">
+      <div class="container col">
+        <h3>Appareil Cardiovasculaire</h3>
+        <div class="row">
+        <div class="form-group col-3 ">
+          <label for="TA">T.A</label>
+          <input type="number" class="form-control form-control-sm" id="TA" formControlName="TA">
+        </div>
+        <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+          /mmHg
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-3">
+          <label for="pouls">Pouls</label>
+          <input type="number" class="form-control form-control-sm" id="pouls" formControlName="pouls">
+        </div>
+        <div class="col-3 d-flex flex-column justify-content-center " style="padding-top: 13px;">
+          /mn
+        </div>
+      </div>
+        <div class="form-group ">
+          <label for="varices">Varices</label>
+          <input type="text" class="form-control form-control-sm" id="varices" formControlName="varices">
+        </div>
+      </div>
+      <div class="container col">
+        <h3>Appareil respiratoire- rhino-pharynx</h3>
+        <div class="form-group ">
+          <label for="cap">Cap. Vit</label>
+          <input type="text" class="form-control form-control-sm" id="cap" formControlName="cap">
+        </div>
+        <div class="form-group ">
+          <label for="vems">V.E.M.S</label>
+          <input type="text" class="form-control form-control-sm" id="vems" formControlName="vems">
+        </div>
+        <div class="form-group ">
+          <label for="vemscv">V.E.M.S/ C.V</label>
+          <input type="text" class="form-control form-control-sm" id="vemscv" formControlName="vemscv">
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-2">
+      <div class="container col">
+        <h3>Appareil Digestif</h3>
+        <div class="form-group ">
+          <label for="parois">Parois</label>
+          <input type="text" class="form-control form-control-sm" id="parois" formControlName="parois">
+        </div>
+        <div class="form-group ">
+          <label for="regime">Régime </label>
+          <input type="text" class="form-control form-control-sm" id="regime" formControlName="regime">
+        </div>
+      </div>
+      <div class="container col">
+        <h3>Appareil Génital</h3>
+        <div class="form-group ">
+          <label for="desc1">Description</label>
+          <input type="text" class="form-control form-control-sm" id="desc1" formControlName="desc1">
+        </div>
+        <div class="form-group ">
+          <label for="regles">Règles</label>
+          <input type="text" class="form-control form-control-sm" id="regles" formControlName="regles">
+        </div>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="container col">
+        <h3>Appareil Urinaire</h3>
+        <div class="form-group ">
+          <label for="desc2">Description</label>
+          <input type="text" class="form-control form-control-sm" id="desc2" formControlName="desc2">
+        </div>
+        <div class="form-group ">
+          <label for="albumine">Albumine </label>
+          <input type="text" class="form-control form-control-sm" id="albumine" formControlName="albumine">
+        </div>
+        <div class="form-group ">
+          <label for="sucre">Sucre </label>
+          <input type="text" class="form-control form-control-sm" id="sucre" formControlName="sucre">
+        </div>
+      </div>
+      <div class="container col">
+        <h3>Appareil Hématopoiétique</h3>
+        <div class="form-group ">
+          <label for="ganglions">Ganglions</label>
+          <input type="text" class="form-control form-control-sm" id="ganglions" formControlName="ganglions">
+        </div>
+        <div class="form-group ">
+          <label for="rate">Rate</label>
+          <input type="text" class="form-control form-control-sm" id="rate" formControlName="rate">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row p-2">
+
+        <h3>Système Neuro-Psychisme</h3>
+        <div class="container col form-row align-items-center">
+        <div class="col my-1">
+          <label class="mr-sm-2" for="tremblement">Tremblement</label>
+          <select class="form-select form-select-sm mb-3" id="tremblement" formControlName="tremblement">
+            <option selected>Choose...</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+        <div class="col my-1">
+          <label class="mr-sm-2" for="equilibre">Equilibre</label>
+          <select class="form-select form-select-sm mb-3" id="equilibre" formControlName="equilibre" >
+            <option selected>Choose...</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+        <div class="col my-1">
+          <label class="mr-sm-2" for="reflexes_tend">Réflexes Tend</label>
+          <select class="form-select form-select-sm mb-3" id="reflexes_tend" formControlName="reflexes_tend">
+            <option selected>Choose...</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="container col">
+        <h3> </h3>
+        <div class="col my-1">
+          <label class="mr-sm-2" for="nervotime">Nervotisme</label>
+          <select class="form-select form-select-sm mb-3" id="nervotime" formControlName="nervotime">
+            <option selected>Choose...</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+        <div class="col my-1">
+          <label class="mr-sm-2" for="S_remberg">S.de Remberg</label>
+          <select class="form-select form-select-sm mb-3" id="S_remberg" formControlName="S_remberg">
+            <option selected>Choose...</option>
+            <option value="Negatif">Négatif</option>
+            <option value="Positif">Positif</option>
+          </select>
+        </div>
+        <div class="col my-1">
+          <label class="mr-sm-2" for="reflexes_oc">Réflexes OC</label>
+          <select class="form-select form-select-sm mb-3" id="reflexes_oc" formControlName="reflexes_oc">
+            <option selected>Choose...</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+        </div>
+
+    </div>
+    <div class="container">
+
+      <div class="form-group ">
+        <button type="submit" class="btn btn-success" >Ajouter Dossier</button>
+      </div>
+    </div>
+
+  </form>
+</div>

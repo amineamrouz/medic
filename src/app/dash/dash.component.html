@@ -1,0 +1,36 @@
+<div class="col-xs-12">
+  <h2>Les utilisateurs</h2>
+
+  <ul class="list-group">
+    <!-- <app-user-view
+
+    *ngFor="let user of users, let i=index"
+    [indexOfUser]="i"
+    [username]="user.username"
+    [password]="user.password"
+    [id]="user.id">
+
+  </app-user-view> -->
+  <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="users?.length != 0">
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+        <td> <button class="btn btn-danger" (click)="onDetail(user.id)" >Detail</button> </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="users?.length == 0">
+      <tr>
+        <td colspan="3" class="no-data-available">No data!</td>
+      </tr>
+    </tbody>
+  </table>

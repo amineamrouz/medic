@@ -1,0 +1,59 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <div class="container m-1 p-1">
+    <button class=" btn btn btn-outline-secondary" *ngIf="isAdd === false" (click)="onAdd()" ><span class="btn-label"><i class="bi bi-person-plus"></i></span> Ajouter</button>
+    <button class="btn btn btn-outline-warning" *ngIf="isAdd === true" (click)="onAdd()" ><span class="btn-label"><i class="bi bi-x-lg" ></i></span> Annuler</button>
+    <div id="buttons" class="d-flex justify-content-center mb-1"></div>
+  </div>
+  </nav>
+<div class="container Kontainer ">
+  <form [formGroup]="fg_emp" (ngSubmit)="onAddEmp()">
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  style="width:100% !important" class="table hover order-column">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>N°Employé</th>
+      <th>Prenom</th>
+      <th>Nom</th>
+      <th>Cin</th>
+      <th>Departement</th>
+      <th>Telephone</th>
+      <th>E-mail</th>
+      <th>Delete</th>
+
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngIf="isAdd === true">
+
+        <td>0</td>
+        <td><input type="text" class="form-control" id="num_emp" formControlName="num_emp"></td>
+        <td><input type="text" class="form-control" id="prenom" formControlName="prenom"></td>
+        <td><input type="text" class="form-control" id="nom" formControlName="nom"></td>
+        <td><input type="text" class="form-control" id="cin" formControlName="cin"></td>
+        <td><input type="text" class="form-control" id="departement" formControlName="departement"></td>
+        <td><input type="text" class="form-control" id="telephone" formControlName="telephone"></td>
+        <td><input type="text" class="form-control" id="email" formControlName="email"></td>
+        <td> <button type="submit" class="btn btn btn-outline-secondary"  [disabled]="fg_emp.invalid"><span class="btn-label"><i class="bi bi-person-plus"></i></span> Ajouter</button> </td>
+
+    </tr>
+    <ng-template [ngIf]="emps?.length != 0" >
+    <tr *ngFor="let emp of emps" (click)="onDM(emp.id_emp)" role="button">
+      <td>{{ emp.id_emp }}</td>
+      <td>{{ emp.num_emp }}</td>
+      <td>{{ emp.prenom }}</td>
+      <td>{{ emp.nom }}</td>
+      <td>{{ emp.cin }}</td>
+      <td>{{ emp.departement }}</td>
+      <td>{{ emp.telephone }}</td>
+      <td>{{ emp.email }}</td>
+      <td> <button type="button" class="btn  btn-sm btn-outline-warning" (click)="$event.stopPropagation();onDelete(emp.id_emp)" ><span  aria-hidden="true"><i class="bi bi-trash-fill"></i></span></button> </td>
+    </tr>
+  </ng-template>
+  </tbody>
+  <tbody *ngIf="emps?.length == 0">
+
+  </tbody>
+</table>
+</form>
+</div>

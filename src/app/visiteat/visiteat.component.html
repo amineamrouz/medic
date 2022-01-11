@@ -1,0 +1,142 @@
+<div class="container p-4">
+  <form [formGroup]="fg_examen_AT" (ngSubmit)="onAddEmp()">
+    <h3>Type de visite : Systématique</h3>
+    <div class="row p-2">
+
+      <div class="container col ">
+        <div class="row">
+        <div class="col-4">
+
+        <div class="form-group ">
+          <label for="currentdate">Date</label>
+          <input type="date" class="form-control form-control-sm" id="currentdate" formControlName="currentdate">
+        </div>
+      </div>
+        <div class="form-group col-8">
+          <label for="exm">Examen Clinique</label>
+          <input type="text" class="form-control form-control-sm" id="exm" formControlName="exm">
+        </div>
+    </div>
+        <div class="row pt-2">
+
+        <div class="input-group pt-2" style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="sucre/urine" aria-label="sucre/urine" aria-describedby="sucre/urine">
+        </div>
+        <div class="input-group pt-2" style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="albumine/albumine" aria-label="albumine/albumine" aria-describedby="albumine/albumine">
+        </div>
+        <div class="input-group pt-2" style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="sang/albumine" aria-label="sang/albumine" aria-describedby="sang/albumine">
+        </div>
+        <div class="input-group pt-2 " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="Rx pulmonaire" aria-label="Rx pulmonaire" aria-describedby="Rx pulmonaire">
+        </div>
+        <div class="input-group pt-2" style="width: 33.333% !important;">
+
+          <input type="Date" class="form-control" placeholder="Date Rx" aria-label="Date Rx" aria-describedby="Date Rx">
+
+        </div>
+        </div>
+        <div class="row pt-2">
+
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="T.A" aria-label="T.A" aria-describedby="T.A">
+          <span class="input-group-text" id="T.A">mmHg</span>
+        </div>
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="OG" aria-label="OG" aria-describedby="OG">
+          <span class="input-group-text" id="OG">/10</span>
+        </div>
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="OD" aria-label="OD" aria-describedby="OD">
+          <span class="input-group-text" id="OD">/10</span>
+        </div>
+      </div>
+      <div class="row pt-2">
+
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="taille" aria-label="taille" aria-describedby="taille">
+          <span class="input-group-text" id="taille">Cm</span>
+        </div>
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="Poids" aria-label="Poids" aria-describedby="Poids">
+          <span class="input-group-text" id="Poids">Kg</span>
+        </div>
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="Pouls" aria-label="Pouls" aria-describedby="Pouls">
+          <span class="input-group-text" id="Pouls">/10</span>
+        </div>
+      </div>
+
+
+      </div>
+      </div>
+      <div>
+        <h3>Conclusion</h3>
+        <div class="row">
+          <div class="col-6" style="display: flex;align-items: center;">
+            <label for="etat">Etat : </label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Apte" name="etat" formControlName="etat">
+              <label class="form-check-label" for="etat"> Apte</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Inapte" name="etat" formControlName="etat">
+              <label class="form-check-label" for="etat"> Inapte</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Inapte temporairement" name="etat" formControlName="etat">
+              <label class="form-check-label" for="etat"> Inapte temporairement</label>
+            </div>
+          </div>
+          <div class="col-5">
+            <label class="select-label " for ="arret">Arrêt</label>
+            <select aria-label="Default select example" class="form-select form-select-sm mb-3" id="arret" formControlName="arret">
+              <option selected>Choose...</option>
+              <option value="...">..</option>
+              <option value="..">..</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-5">
+            <label class="select-label " for ="arret">A surveiller tout les </label>
+            <select aria-label="Default select example" class="form-select form-select-sm mb-3" id="arret" formControlName="arret">
+              <option selected value="1 mois">1 mois</option>
+              <option value="6 mois">6 mois</option>
+              <option value="..">..</option>
+            </select>
+          </div>
+          <div class="col-5">
+            <div class="form-group ">
+              <label for="currentdate">Prochaine Visite</label>
+              <input type="date" class="form-control form-control-sm" id="visitdate" formControlName="visitdate">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-5">
+            <div class="form-floating mb-3 pt-2">
+              <input type="Text-Area" class="form-control form-control-sm" id="comm" formControlName="comm">
+              <label for="comm">Commentaire </label>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    <div class="container">
+
+      <div class="form-group ">
+        <button type="submit" class="btn btn-success mx-2" >Ajouter</button>
+        <button type="button" class="btn btn-warning mx-2" > Annuler</button>
+      </div>
+    </div>
+
+  </form>
+</div>

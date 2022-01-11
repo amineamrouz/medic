@@ -1,0 +1,418 @@
+<div class="container">
+
+  <div class="container" *ngIf="ahfs?.length !== 0 && vacs?.length !== 0  && fsps?.length !== 0">
+    <form [formGroup]="fg_add_dm_detail" (ngSubmit)="onSubmitFormadddmdetail()">
+      <div class="">
+        <div class="col-12">
+          <h2>ATCDs Familiaux</h2>
+          <div class="row">
+
+
+
+          <div class="form-group col-mb-6 col-6 ">
+            <label class="col-mb-3 col-form-label " for="nom_pere">Nom Père</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control form-control-sm" id="nom_pere" formControlName="nom_pere"
+                [(ngModel)]="ahfs[0].nom_pere">
+            </div>
+          </div>
+          <div class="form-group col-mb-6 col-6 ">
+            <label class="col-mb-3 col-form-label " for="nom_mere">Nom Mère</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control form-control-sm" id="nom_mere" formControlName="nom_mere"
+                [(ngModel)]="ahfs[0].nom_mere">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-mb-6 col-6">
+            <label class="col-mb-3 col-form-label " for="conjoint">Conjointe</label>
+            <div class="form-group col-mb-7  ">
+              <!--  -->
+              <input type="text" class="form-control form-control-sm" id="conjoint" formControlName="conjoint"
+                [(ngModel)]="ahfs[0].conjoint">
+            </div>
+          </div>
+          <div class="form-group col-mb-6 col-6 ">
+            <label class="col-mb-3 col-form-label " for="nb_enfants">N° Enfants</label>
+            <div class="form-group col-mb-7  ">
+              <input type="number" class="form-control form-control-sm" id="nb_enfants" formControlName="nb_enfants"
+                [(ngModel)]="ahfs[0].nb_enfants">
+            </div>
+          </div>
+          <div class="row">
+          </div>
+          <div class="form-group col-mb-6 col-6 ">
+            <label class="col-mb-3 col-form-label " for="nb_freres">N° Frères</label>
+            <div class="form-group col-mb-7  ">
+              <input type="number" class="form-control form-control-sm" id="nb_freres" formControlName="nb_freres"
+                [(ngModel)]="ahfs[0].nb_freres">
+            </div>
+          </div>
+          <div class="form-group col-mb-6 col-6 ">
+            <label class="col-mb-3 col-form-label " for="nb_soeurs"> N° Soeurs</label>
+            <div class="form-group col-mb-7  ">
+              <input type="number" class="form-control form-control-sm" id="nb_soeurs" formControlName="nb_soeurs"
+                [(ngModel)]="ahfs[0].nb_soeurs">
+            </div>
+          </div>
+        </div>
+        </div>
+        <br>
+
+        <div class="col">
+          <h2>Vaccination</h2>
+
+        <div class="row vac">
+          <div class="col-5">
+          BCG :
+         <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="Yes" name="BCG" formControlName="BCG">
+          <label class="form-check-label" for="inlineRadio1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="No" name="BCG" formControlName="BCG">
+          <label class="form-check-label" for="inlineRadio2">No</label>
+        </div>
+      </div>
+      <div class="col-5">
+          BCG2 :
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Yes" name="BCG2" formControlName="BCG2">
+            <label class="form-check-label" for="inlineRadio1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="No" name="BCG2" formControlName="BCG2">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>
+        </div>
+        </div>
+
+        <div class="row vac">
+          <div class="col-5">
+            Tetanos :
+         <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="Yes" name="Tetanos" formControlName="Tetanos">
+          <label class="form-check-label" for="inlineRadio1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="No" name="Tetanos" formControlName="Tetanos">
+          <label class="form-check-label" for="inlineRadio2">No</label>
+        </div>
+      </div>
+      <div class="col-5">
+          Covid-19 :
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Yes" name="covid" formControlName="covid">
+            <label class="form-check-label" for="inlineRadio1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="No" name="covid" formControlName="covid">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>
+        </div>
+        </div>
+
+          <!-- <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="diphterie_tetanos">Tetanos</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control form-control-sm" id="diphterie_tetanos" formControlName="diphterie_tetanos"
+                [(ngModel)]="vacs[0].diphterie_tetanos">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="TAB">TAB</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control form-control-sm" id="TAB" formControlName="TAB" [(ngModel)]="vacs[0].TAB">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="polimoyelite">polimoyelite</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control form-control-sm" id="polimoyelite" formControlName="polimoyelite"
+                [(ngModel)]="vacs[0].polimoyelite">
+            </div>
+          </div>-->
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="autres">autres</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control form-control-sm" id="autres" formControlName="autres">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row p-2" >
+
+        <h2>Activité professionnelle et formation scolaire</h2>
+        <div class="container row">
+
+          <div class="form-group col ">
+            <label class="col-mb-3 col-form-label " for="Formation">Formation</label>
+            <div class="form-group col-mb-7  ">
+              <textarea type="text" class="form-control" id="Formation" formControlName="Formation"
+                [(ngModel)]="fsps[0].Formation"> </textarea>
+            </div>
+          </div>
+
+          <div class="form-group col ">
+            <label class="col-mb-3 col-form-label " for="activite_professionnelle">activité professionnelle
+              interne</label>
+            <div class="form-group col-mb-7  ">
+              <textarea type="text" class="form-control" id="activite_professionnelle"
+                formControlName="activite_professionnelle" [(ngModel)]="fsps[0].activite_professionnelle"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col">
+
+        <h2>ATCDs Personnelle</h2>
+        <div class="row">
+        <div class="col-4">
+        <span>ATCDs MD</span>
+      <ngx-select-dropdown
+    (searchChange)="searchChange($event)"
+    tabindex="0"
+    placeholder="Select option"
+    [multiple]="false"
+    [(ngModel)]="singleSelect"
+    [config]="config"
+    [options]="options"
+  ></ngx-select-dropdown>
+</div>
+<div class="col-4">
+        <span>ATCDs CH</span>
+        <ngx-select-dropdown
+    (searchChange)="searchChange($event)"
+    tabindex="0"
+    placeholder="Select option"
+    [multiple]="false"
+    [(ngModel)]="singleSelect2"
+    [config]="config"
+    [options]="options2"
+  ></ngx-select-dropdown>
+</div>
+<div class="col-4">
+  <span>Intoxication</span>
+<ngx-select-dropdown
+(searchChange)="searchChange($event)"
+tabindex="0"
+placeholder="Select option"
+[multiple]="false"
+[(ngModel)]="singleSelect3"
+[config]="config"
+[options]="options3"
+></ngx-select-dropdown>
+</div>
+
+</div>
+
+<div class="row p-1">
+  <div class="col-4">
+
+    <div class="form-group  ">
+      <label class="col-mb-3 col-form-label p-0 " for="avp">A.V.P</label>
+      <div class="form-group col-mb-7  ">
+        <input type="text" class="form-control" id="avp" formControlName="avp">
+      </div>
+    </div>
+
+  </div>
+<div class="col-4">
+  <div class="form-group  ">
+    <label class="col-mb-3 col-form-label p-0 " for="adt">Accidents de Travail</label>
+    <div class="form-group col-mb-7  ">
+      <input type="text" class="form-control" id="adt" formControlName="adt">
+    </div>
+  </div>
+</div>
+<div class="col-4">
+
+  <span>Risques</span>
+<ngx-select-dropdown
+(searchChange)="searchChange($event)"
+tabindex="0"
+placeholder="Select option"
+[multiple]="false"
+[(ngModel)]="singleSelect4"
+[config]="config"
+[options]="options4"
+></ngx-select-dropdown>
+
+</div>
+</div>
+
+<div class="row p-1">
+  <div class="col-4">
+
+    <div class="form-group  ">
+      <label class="col-mb-3 col-form-label p-0 " for="medicam">Prises Médiacamenteuse</label>
+      <div class="form-group col-mb-7  ">
+        <input type="text" class="form-control" id="medicam" formControlName="medicam">
+      </div>
+    </div>
+
+  </div>
+<div class="col-4">
+  <div class="form-group  ">
+    <label class="col-mb-3 col-form-label p-0 " for="adt">Accidents de Travail</label>
+    <div class="form-group col-mb-7  ">
+      <input type="text" class="form-control" id="adt" formControlName="adt">
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+      <div class="form-group ">
+        <!-- <button type="submit" class="btn btn-danger" [disabled]="fg_add_dm_detail.invalid">Ajouter Dossier</button> -->
+      </div>
+
+    </form>
+  </div>
+
+
+  <!--********** au cas où les donnée sont déjà dans la base de donnée ****************-->
+
+
+  <div class="container" *ngIf="  ahfs?.length == 0 && vacs?.length == 0  && fsps?.length == 0 ">
+    <form [formGroup]="fg_add_dm_detail" (ngSubmit)="onSubmitFormadddmdetail()">
+      <div class="row p-4">
+        <div class="container col-md-6">
+
+          <h2>AHF</h2>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="conjoint">Conjointe</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="conjoint" formControlName="conjoint">
+            </div>
+          </div>
+
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="nom_pere">nom pere</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="nom_pere" formControlName="nom_pere">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="nom_mere">nom mere</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="nom_mere" formControlName="nom_mere">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="nb_enfants">enfants</label>
+            <div class="form-group col-mb-7  ">
+              <input type="number" class="form-control" id="nb_enfants" formControlName="nb_enfants">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="nb_freres">freres</label>
+            <div class="form-group col-mb-7  ">
+              <input type="number" class="form-control" id="nb_freres" formControlName="nb_freres">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="nb_soeurs">soeurs</label>
+            <div class="form-group col-mb-7  ">
+              <input type="number" class="form-control" id="nb_soeurs" formControlName="nb_soeurs">
+            </div>
+          </div>
+        </div>
+
+        <div class="container col-md-6">
+          <h2>Vaccination</h2>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="BCG">BCG</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="BCG" formControlName="BCG">
+            </div>
+          </div>
+
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="diphterie_tetanos">diphterie tetanos</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="diphterie_tetanos" formControlName="diphterie_tetanos">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="TAB">TAB</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="TAB" formControlName="TAB">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="polimoyelite">polimoyelite</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="polimoyelite" formControlName="polimoyelite">
+            </div>
+          </div>
+          <div class="form-group col-mb-3 col ">
+            <label class="col-mb-3 col-form-label " for="autres">autres</label>
+            <div class="form-group col-mb-7  ">
+              <input type="text" class="form-control" id="autres" formControlName="autres">
+            </div>
+          </div>
+        </div>
+      </div>
+        <hr>
+      <div class="row">
+
+        <h2>Activité professionnelle et formation scolaire</h2>
+        <div class="container row">
+
+          <div class="form-group col ">
+            <label class="col-mb-3 col-form-label " for="Formation">Formation</label>
+            <div class="form-group col-mb-7  ">
+              <textarea type="text" class="form-control" id="Formation" formControlName="Formation"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group col ">
+            <label class="col-mb-3 col-form-label " for="activite_professionnelle">activité professionnelle
+              interne</label>
+            <div class="form-group col-mb-7  ">
+              <textarea type="text" class="form-control" id="activite_professionnelle"
+                formControlName="activite_professionnelle"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <br>
+      <div class="form-group ">
+        <button type="submit" class="btn btn-danger" [disabled]="fg_add_dm_detail.invalid">Ajouter Dossier</button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <hr>
+  <div class="container">
+    <div class="">
+      <h2>Liste de visite</h2>
+
+      <div class="">
+
+        <app-list-visite></app-list-visite>
+
+
+      </div>
+
+
+
+    </div>
+
+
+    <hr>
+  </div>
+
+</div>

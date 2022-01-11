@@ -1,0 +1,75 @@
+<div class="container p-4">
+  <form [formGroup]="fg_examen_AT" (ngSubmit)="onAddEmp()">
+    <h3>Type de visite : AT</h3>
+    <div class="row p-2">
+
+      <div class="container col ">
+        <div class="row">
+        <div class="col-4">
+
+        <div class="form-group ">
+          <label for="currentdate">Date</label>
+          <input type="date" class="form-control form-control-sm" id="currentdate" formControlName="currentdate">
+        </div>
+      </div>
+        <div class="form-group col-8">
+          <label for="diagnostic">Diagnostic</label>
+          <input type="text" class="form-control form-control-sm" id="diagnostic" formControlName="diagnostic">
+        </div>
+    </div>
+        <div class="row pt-2">
+
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="ITT GLOBAL" aria-label="ITT GLOBAL" aria-describedby="ITT GLOBAL">
+          <span class="input-group-text" id="ITT GLOBAL">Jours</span>
+        </div>
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="Taux IPP Accordée" aria-label="Taux IPP Accordée" aria-describedby="Taux IPP Accordée">
+          <span class="input-group-text" id="Taux IPP Accordée">%</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating mb-3 pt-2">
+          <input type="Text-Area" class="form-control form-control-sm" id="seq" formControlName="seq">
+          <label for="seq">Séquelles </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6" style="display: flex;align-items: center;">
+          <span>Réaménagement de poste: </span>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Yes" name="re" formControlName="covid">
+            <label class="form-check-label" for="inlineRadio1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="No" name="re" formControlName="covid">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>
+        </div>
+
+        <div class="input-group " style="width: 33.333% !important;">
+          <input type="number" class="form-control" placeholder="Durée" aria-label="Durée" aria-describedby="Durée">
+          <span class="input-group-text" id="Durée">jours</span>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="form-floating mb-3 pt-2">
+          <input type="text" class="form-control form-control-sm" id="np" formControlName="np">
+          <label for="np">Nouveau Post / Condition de travail </label>
+        </div>
+      </div>
+
+      </div>
+      </div>
+
+    <div class="container">
+
+      <div class="form-group ">
+        <button type="submit" class="btn btn-success mx-2" >Ajouter</button>
+        <button type="button" class="btn btn-warning mx-2" > Annuler</button>
+      </div>
+    </div>
+
+  </form>
+</div>
